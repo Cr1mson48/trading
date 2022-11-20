@@ -9,12 +9,12 @@ import time
 import re
 
 session_auth = usdt_perpetual.HTTP(
-    endpoint="https://api.bybit.com",
-    api_key='H9X78xMQgIP5yDSyok',
-    api_secret='YeQTC5zNr7PvHcmjwkJVBFywPnie9pdLe0cw'
+    endpoint="https://api-testnet.bybit.com",
+    api_key='gw90bhuJCb29ZaeDU9',
+    api_secret='KwqbUpaV1CyCv9CLcSiRHcbzv6S1bgxogAsb'
 )
 session_unauth = inverse_perpetual.HTTP(
-    endpoint="https://api.bybit.com"
+    endpoint="https://api-testnet.bybit.com"
 )
 
 print(session_auth.get_wallet_balance()['result']['USDT']['equity'])
@@ -35,7 +35,7 @@ phone_number = "+79525974084"    # Номер телефона аккаунта,
 chat = 'https://t.me/+Gw9duznm9bc3NmE6'
 
 old_message = ''
-#Indicator by Cryptonec
+
 with TelegramClient(name, api_id, api_hash) as client2:
     for dialog in client2.iter_dialogs():
         if dialog.name == "Crypto Futures":
@@ -133,6 +133,7 @@ while True:
                             qty_2 = qty_2 * 10
                             qty_3 = qty / 100 * float(st_two_procent[0:-2])
                             qty_3 = qty_3 * 10
+                            print(f'Qty_m {qty_m} qty_2 {qty_2} qty_3 {qty_3}')
                             print(f'Procent {st_one_procent[0:-2]}')
                             if poss == 'SHORT':
                                 side = 'Sell'
