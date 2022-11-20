@@ -28,17 +28,17 @@ size_chats = 200
 groups=[]
 
 
-name = 'anon'
-api_id = "11323339"                  # API ID (получается при регистрации приложения на my.telegram.org)
-api_hash = "3dc8f15b3fdef03e259062d938a3311a"              # API Hash (оттуда же)
-phone_number = "+79525974084"    # Номер телефона аккаунта, с которого будет выполняться код
+name = 'vip'
+api_id = "26762841"                  # API ID (получается при регистрации приложения на my.telegram.org)
+api_hash = "7121d5eaf2355b59b7a12f0be22d2a80"              # API Hash (оттуда же)
+phone_number = "+79952334882"    # Номер телефона аккаунта, с которого будет выполняться код
 chat = 'https://t.me/+Gw9duznm9bc3NmE6'
 
 old_message = ''
 #Indicator by Cryptonec
 with TelegramClient(name, api_id, api_hash) as client2:
     for dialog in client2.iter_dialogs():
-        if dialog.name == "Crypto Futures":
+        if dialog.name == "VIP 2.0 SCALP":
             my_private_channel = dialog
             my_private_channel_id = dialog.id
             break
@@ -47,7 +47,7 @@ while True:
     try:
         with TelegramClient(name, api_id, api_hash) as client2:
             for dialog in client2.iter_dialogs():
-                if dialog.name == "Crypto Futures":
+                if dialog.name == "VIP 2.0 SCALP":
                     my_private_channel = dialog
                     my_private_channel_id = dialog.id
                     break
@@ -185,7 +185,7 @@ while True:
                                     Stop loss: {stop_loss}''')
                         except Exception as e:
                             print(e)
-            elif '#SCALPING_session' in new_message:
+            elif '#SUPER_SCALPING_SESSION' in new_message:
                 new_message = my_private_channel.message.message
                 lines = new_message.split('\n')
                 print(lines)
