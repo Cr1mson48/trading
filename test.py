@@ -17,6 +17,7 @@ session_unauth = inverse_perpetual.HTTP(
     endpoint="https://api.bybit.com"
 )
 
+
 print(session_auth.get_wallet_balance()['result']['USDT']['equity'])
 balance = session_auth.get_wallet_balance()['result']['USDT']['equity']
 order = balance / 100 * 5
@@ -27,6 +28,12 @@ last_date = None
 size_chats = 200
 groups=[]
 
+v2_old = ''
+v3_old = ''
+v4_old = ''
+v5_old = ''
+v6_old = ''
+
 
 name = 'vip'
 api_id = "26762841"                  # API ID (получается при регистрации приложения на my.telegram.org)
@@ -35,7 +42,7 @@ phone_number = "+79952334882"    # Номер телефона аккаунта,
 chat = 'https://t.me/+Gw9duznm9bc3NmE6'
 
 old_message = ''
-
+print('Запуск')
 with TelegramClient(name, api_id, api_hash) as client2:
     for dialog in client2.iter_dialogs():
         if dialog.name == "VIP 2.0 SCALP":
@@ -84,11 +91,10 @@ while True:
                         if dialog.name == "Indicator by Cryptonec":
                             my_private_channel = dialog
                             my_private_channel_id = dialog.id
-                            v5 = my_private_channel.message.message
+                            v6 = my_private_channel.message.message
                             break
-            print(my_private_channel.message.message)
-            if v2 != my_private_channel.message.message and v3 != my_private_channel.message.message and v4 != my_private_channel.message.message\
-                    and v5 != my_private_channel.message.message:
+            if v2_old != my_private_channel.message.message and v3_old != my_private_channel.message.message and v4_old != my_private_channel.message.message\
+                    and v5_old != my_private_channel.message.message and v6_old != my_private_channel.message.message:
                 new_message = my_private_channel.message.message
                 if ('#SHORT' in new_message or '#LONG' in new_message) and '#SUPER_SCALPING_SESSION' not in new_message:
                     if '#SHORT' in new_message:
@@ -269,5 +275,7 @@ while True:
                 v4_old = v4
             if i == 4:
                 v5_old = v5
+            if i == 5:
+                v6_old = v6
     except Exception as r:
         print(r)
