@@ -532,7 +532,7 @@ while True:
             if x == 1:
                 with TelegramClient(name, api_id, api_hash) as client2:
                     for dialog in client2.iter_dialogs():
-                        if dialog.name == "Test":
+                        if dialog.name == "VIP 3.0 HANDMADE":
                             my_private_channel = dialog
                             my_private_channel_id = dialog.id
                             v1 = my_private_channel.message.message
